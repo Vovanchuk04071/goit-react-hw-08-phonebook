@@ -1,0 +1,11 @@
+.label {
+    font-weight: 600;
+    margin-bottom: 10px;
+    width: max-content;
+}
+
+.input {
+    line-height: 20px;
+    border-radius: 10px;
+    outline: none;
+}
