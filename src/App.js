@@ -1,13 +1,12 @@
 import React, { Component, lazy, Suspense } from 'react';
 import { Switch } from 'react-router-dom';
 import Container from './Components/Container';
-import AppBar from './Components/UserMenu/AppBar';
+import AppBar from './Components/User/AppBar';
 import { getCurrentUser } from './redux/Auth/auth-operation';
 import { connect } from 'react-redux';
-import PrivetRoute from './Components/UserMenu/PrivetRoute';
-import PublicRoute from './Components/UserMenu/PublicRoute';
+import PrivetRoute from './Components/User/PrivetRoute';
+import PublicRoute from './Components/User/PublicRoute';
 
-// const SingIn = lazy(() => import('./views/LoginView/SingIn'));
 const HomeView = lazy(() => import('./views/HomeView/HomeView'));
 const PhonebookView = lazy(() => import('./views/PhoneBookView/PhonebookView'));
 const LoginView = lazy(() => import('./views/LoginView'));

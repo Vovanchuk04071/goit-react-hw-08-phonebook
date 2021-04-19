@@ -2,8 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import defaultImg from './default-avatar.png';
 import styles from './UserMenu.module.css';
-import { getUserEmail } from '../../redux/Auth/auth-selectors';
-import { logout } from '../../redux/Auth/auth-operation';
+import { getUserEmail } from '../../../redux/Auth/auth-selectors';
+import { logout } from '../../../redux/Auth/auth-operation';
 import Button from '@material-ui/core/Button';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 
