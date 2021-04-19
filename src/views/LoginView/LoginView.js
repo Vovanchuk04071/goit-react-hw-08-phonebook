@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import styles from './LoginView.module.css';
 import { login } from '../../redux/Auth/auth-operation';
+import Button from '@material-ui/core/Button';
+import TextField from '@material-ui/core/TextField';
 
 class LoginView extends Component {
   state = {
@@ -25,6 +27,7 @@ class LoginView extends Component {
       password: '',
     });
   };
+
   render() {
     const { email, password } = this.state;
     return (
@@ -35,7 +38,20 @@ class LoginView extends Component {
           onSubmit={this.handleSubmit}
           autoComplete="off"
         >
-          <label className={styles.label}>
+          <TextField
+            margin="normal"
+            type="email"
+            name="email"
+            value={email}
+            autoFocus
+            size="small"
+            onChange={this.handleChange}
+            label="email"
+            variant="outlined"
+          >
+            {'Почта '}
+          </TextField>
+          {/* <label className={styles.label}>
             Почта
             <input
               type="email"
@@ -44,8 +60,18 @@ class LoginView extends Component {
               autoFocus
               onChange={this.handleChange}
             />
-          </label>
-          <label className={styles.label}>
+          </label> */}
+          <TextField
+            margin="normal"
+            type="password"
+            name="password"
+            value={password}
+            onChange={this.handleChange}
+            label="password"
+            variant="outlined"
+            size="small"
+          ></TextField>
+          {/* <label className={styles.label}>
             Пароль
             <input
               type="password"
@@ -53,8 +79,15 @@ class LoginView extends Component {
               value={password}
               onChange={this.handleChange}
             />
-          </label>
-          <button type="submit">Войти</button>
+          </label> */}
+          <Button
+            variant="contained"
+            color="primary"
+            size="small"
+            type="submit"
+          >
+            Войти
+          </Button>
         </form>
       </div>
     );

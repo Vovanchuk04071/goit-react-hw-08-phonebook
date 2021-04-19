@@ -1,6 +1,7 @@
 import React from 'react';
 import style from './ContactList.module.css';
 import PropTypes from 'prop-types';
+import Button from '@material-ui/core/Button';
 
 const ContactList = ({ contacts, onDeleteContact }) => (
   <ul className={style.contacts}>
@@ -8,13 +9,17 @@ const ContactList = ({ contacts, onDeleteContact }) => (
       <li className={style.list} key={id}>
         <p>{name}</p>
         <p>{number}</p>
-        <button
+
+        <Button
           className={style.button}
           onClick={onDeleteContact(id)}
+          variant="contained"
+          color="primary"
+          size="small"
           type="submit"
         >
           Delete
-        </button>
+        </Button>
       </li>
     ))}
   </ul>

@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { register } from '../../redux/Auth/auth-operation';
 import styles from './Register.module.css';
+import Button from '@material-ui/core/Button';
+import TextField from '@material-ui/core/TextField';
 
 class RegisterView extends Component {
   state = {
@@ -38,35 +40,48 @@ class RegisterView extends Component {
           onSubmit={this.handleSubmit}
           className={styles.form}
         >
-          <label className={styles.label}>
-            Имя
-            <input
-              type="text"
-              name="name"
-              autoFocus
-              value={name}
-              onChange={this.handleChange}
-            />
-          </label>
-          <label className={styles.label}>
-            Почта
-            <input
-              type="email"
-              name="email"
-              value={email}
-              onChange={this.handleChange}
-            />
-          </label>
-          <label className={styles.label}>
-            Пароль
-            <input
-              type="password"
-              name="password"
-              value={password}
-              onChange={this.handleChange}
-            />
-          </label>
-          <button type="submit">Зарегистрироватся</button>
+          <TextField
+            className={styles.label}
+            type="text"
+            name="name"
+            autoFocus
+            value={name}
+            onChange={this.handleChange}
+            label="name"
+            variant="outlined"
+            size="small"
+          ></TextField>
+
+          <TextField
+            margin="normal"
+            type="email"
+            name="email"
+            value={email}
+            size="small"
+            onChange={this.handleChange}
+            label="email"
+            variant="outlined"
+          >
+            {'Почта '}
+          </TextField>
+          <TextField
+            margin="normal"
+            type="password"
+            name="password"
+            value={password}
+            onChange={this.handleChange}
+            label="password"
+            variant="outlined"
+            size="small"
+          ></TextField>
+          <Button
+            variant="contained"
+            color="primary"
+            size="small"
+            type="submit"
+          >
+            Зарегистрироватся
+          </Button>
         </form>
       </div>
     );

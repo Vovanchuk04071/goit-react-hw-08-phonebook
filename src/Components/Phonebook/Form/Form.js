@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import Button from '@material-ui/core/Button';
 import styles from './Form.module.css';
 
 class Form extends Component {
@@ -33,9 +33,7 @@ class Form extends Component {
     const normalaizedFilter = inputName.toLowerCase();
 
     return contacts.find(
-      contact =>
-        contact.name.toLowerCase() ===
-        normalaizedFilter,
+      contact => contact.name.toLowerCase() === normalaizedFilter,
     );
   };
 
@@ -53,10 +51,7 @@ class Form extends Component {
   render() {
     const { name, number } = this.state;
     return (
-      <form
-        className={styles.form}
-        onSubmit={this.handleSubmit}
-      >
+      <form className={styles.form} onSubmit={this.handleSubmit}>
         <label className={styles.label}>
           Name
           <input
@@ -80,12 +75,9 @@ class Form extends Component {
             className={styles.formInput}
           ></input>
         </label>
-        <button
-          className={styles.button}
-          type="submit"
-        >
+        <Button variant="contained" color="primary" size="small" type="submit">
           Add contact
-        </button>
+        </Button>
       </form>
     );
   }

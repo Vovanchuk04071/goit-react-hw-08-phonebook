@@ -7,6 +7,7 @@ import { connect } from 'react-redux';
 import PrivetRoute from './Components/UserMenu/PrivetRoute';
 import PublicRoute from './Components/UserMenu/PublicRoute';
 
+// const SingIn = lazy(() => import('./views/LoginView/SingIn'));
 const HomeView = lazy(() => import('./views/HomeView/HomeView'));
 const PhonebookView = lazy(() => import('./views/PhoneBookView/PhonebookView'));
 const LoginView = lazy(() => import('./views/LoginView'));
