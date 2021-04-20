@@ -11,7 +11,7 @@ const Error = ({ error, setError }) => (
         setError(null);
       }}
     >
-      {error}
+      <p>Не правильный логин или пароль</p>
     </Alert>
   </div>
 );
