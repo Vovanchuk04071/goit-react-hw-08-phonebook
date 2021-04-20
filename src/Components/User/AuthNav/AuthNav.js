@@ -1,5 +1,7 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
+import Error from '../Error';
 
 const styles = {
   link: {
@@ -14,15 +16,33 @@ const styles = {
   },
 };
 
-const AuthNav = () => (
-  <nav>
-    <NavLink to="/login" style={styles.link} activeStyle={styles.activeLink}>
-      Войти
-    </NavLink>
-    <NavLink to="/register" style={styles.link} activeStyle={styles.activeLink}>
-      Регистрация
-    </NavLink>
-  </nav>
+const AuthNav = ({ error }) => (
+  <>
+    {error ? (
+      <Error />
+    ) : (
+      <nav>
+        <NavLink
+          to="/login"
+          style={styles.link}
+          activeStyle={styles.activeLink}
+        >
+          Войти
+        </NavLink>
+        <NavLink
+          to="/register"
+          style={styles.link}
+          activeStyle={styles.activeLink}
+        >
+          Регистрация
+        </NavLink>
+      </nav>
+    )}
+  </>
 );
 
-export default AuthNav;
+const mapStateToProps = state => ({
+  error: state.auth.error,
+});
+
+export default connect(mapStateToProps)(AuthNav);
